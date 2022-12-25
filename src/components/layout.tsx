@@ -1,7 +1,8 @@
-import * as React from "react"
+import React from "react"
 import { Link } from "gatsby"
 import "../styles/global.css"
 import "../fonts/Inter/inter.css"
+import Social from "./social";
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -31,6 +32,7 @@ const Layout = ({ location, title, children }) => {
         <a href="https://shinyakato.dev">Shinya Kato</a>
         {' '}
         All Rights Reserved.
+        <Social />
       </footer>
     </div>
   )

@@ -260,7 +260,7 @@ a:focus {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .post-list-item p {
@@ -321,7 +321,8 @@ a:focus {
 }
 
 .blog-post-nav ul {
-  margin: var(--spacing-0);
+  font-size: var(--fontSize-3);
+  margin: var(--spacing-10) var(--spacing-0) var(--spacing-0) var(--spacing-0);
 }
 
 .gatsby-highlight {

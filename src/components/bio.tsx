@@ -8,10 +8,12 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter} from "@fortawesome/free-brands-svg-icons";
-import { faGithub} from "@fortawesome/free-brands-svg-icons";
+import styled from 'styled-components';
+import Social from "./social";
 
+const BioSummaryStyle = styled.div({
+  margin: '10px 0px 0px 0px',
+});
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -24,33 +26,41 @@ const Bio = () => {
           }
           social {
             twitter
+            github
+            email
           }
         }
       }
     }
   `)
 
+
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata?.author
   const social = data.site.siteMetadata?.social
 
+  const ProfileStyle = styled.div`
+    display: flex;
+  `
   return (
     <div className="bio">
       {author?.name && (
         <p>
-          <strong>{author.name}</strong> aka <a href={`https://github.com//${social?.github || ``}`}>myConsciousness</a>
-          <div>
-            <a href={`https://github.com//${social?.github || ``}`}>
-              <FontAwesomeIcon icon={faGithub} size="lg" />
-            </a>
-            {' '}
-            <a href={`https://twitter.com/${social?.twitter || ``}`}>
-              <FontAwesomeIcon icon={faTwitter} size="lg" />
-            </a>
-          </div>
-          <div>
+          <ProfileStyle>
+            <StaticImage
+              src="../images/me.png"
+              alt="Shinya Kato"
+              objectFit="cover"
+              height={50}
+            />
+            <div>
+              <strong>{author.name}</strong> aka <a href={`https://github.com//${social?.github || ``}`}>myConsciousness</a>
+              <Social />
+            </div>
+          </ProfileStyle>
+          <BioSummaryStyle>
             {author?.summary || null}
-          </div>
+          </BioSummaryStyle>
         </p>
       )}
     </div>

@@ -9,16 +9,17 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `加藤ソフトウェアラボ`,
+    title: `blog.shinyakato.dev 🚀`,
     author: {
       name: `Shinya Kato / 加藤 真也`,
-      summary: `29歳。フリーランス開発者、OSS開発者。旅行家であり、愛犬家。13歳からプログラミングを始め、数多くの言語やフレームワークを使用した開発を経験し、国内大手の様々な基幹システムの開発に関わる。また、twitter_api_v2、mastodon_api、その他多くのDart/Flutterライブラリの作者としても国内外の開発者に知られている。`,
+      summary: `29歳。フリーランス開発者、OSS開発者。旅行家であり、愛犬家。13歳からプログラミングを始め、数多くの言語やフレームワークを使用した開発を経験し、国内大手の様々な基幹システムの開発に関わる。また、twitter_api_v2、mastodon_api、その他多くのDart/Flutterライブラリの作者として国内外の開発者に広く知られており、日本人として初めてTwitterJPの公式スペースにメインスピーカーとして招待された経歴を持つ。`,
     },
     description: `私（加藤 真也）が興味のあるプログラミング関連の技術やライブラリの使い方などを書いていくブログです。主な話題はDartとFlutterになりますが、ジャンルを問わずに書いていく方針です。`,
     siteUrl: `https://blog.shinyakato.dev/`,
     social: {
       twitter: `realshinyakato`,
       github: `myConsciousness`,
+      email: `contact@shinyakato.dev`,
     },
   },
   plugins: [
@@ -41,19 +42,36 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          "gatsby-remark-code-titles",
+          {
+            resolve: "gatsby-remark-code-buttons",
+            options: {
+              toasterText: 'Copied'
+            }
+          },
+          {
+            resolve: "gatsby-remark-prismjs",
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: true,
+              noInlineHighlight: true,
+              prompt: {
+                user: "root",
+                host: "localhost",
+                global: false,
+              },
+            }
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 630,
+              maxWidth: 590
             },
           },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
         ],
       },
     },
@@ -103,7 +121,7 @@ module.exports = {
               }
             }`,
             output: "/rss.xml",
-            title: "加藤ソフトウェアラボ RSS Feed",
+            title: "blog.shinyakato.dev's RSS Feed",
           },
         ],
       },
@@ -111,15 +129,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `加藤ソフトウェアラボ`,
-        short_name: `加藤ソフトウェアラボ`,
+        name: `blog.shinyakato.dev 🚀`,
+        short_name: `blog.shinyakato.dev`,
         start_url: `/`,
         background_color: `#edf2f7`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
   ],
