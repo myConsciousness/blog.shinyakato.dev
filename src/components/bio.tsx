@@ -8,7 +8,10 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import {FontAwesomeIcon} from "gatsby-plugin-fontawesome-css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter} from "@fortawesome/free-brands-svg-icons";
+import { faGithub} from "@fortawesome/free-brands-svg-icons";
+
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -33,23 +36,21 @@ const Bio = () => {
 
   return (
     <div className="bio">
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../images/profile-pic.png"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      />
       {author?.name && (
         <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-             <FontAwesomeIcon icon="fa-brands fa-twitter" />
-          </a>
+          <strong>{author.name}</strong> aka <a href={`https://github.com//${social?.github || ``}`}>myConsciousness</a>
+          <div>
+            <a href={`https://github.com//${social?.github || ``}`}>
+              <FontAwesomeIcon icon={faGithub} size="lg" />
+            </a>
+            {' '}
+            <a href={`https://twitter.com/${social?.twitter || ``}`}>
+              <FontAwesomeIcon icon={faTwitter} size="lg" />
+            </a>
+          </div>
+          <div>
+            {author?.summary || null}
+          </div>
         </p>
       )}
     </div>
