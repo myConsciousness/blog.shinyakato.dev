@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import "../styles/global.css"
 import "../fonts/Inter/inter.css"
 import Social from "./social";
 

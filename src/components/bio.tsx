@@ -39,25 +39,14 @@ const Bio = () => {
   const author = data.site.siteMetadata?.author
   const social = data.site.siteMetadata?.social
 
-  const ProfileStyle = styled.div`
-    display: flex;
-  `
   return (
     <div className="bio">
       {author?.name && (
         <p>
-          <ProfileStyle>
-            <StaticImage
-              src="../images/me.png"
-              alt="Shinya Kato"
-              objectFit="cover"
-              height={50}
-            />
-            <div>
-              <strong>{author.name}</strong> aka <a href={`https://github.com//${social?.github || ``}`}>myConsciousness</a>
-              <Social />
-            </div>
-          </ProfileStyle>
+          <div>
+            <strong>{author.name}</strong> aka <a href={`https://github.com//${social?.github || ``}`}>myConsciousness</a>
+            <Social />
+          </div>
           <BioSummaryStyle>
             {author?.summary || null}
           </BioSummaryStyle>

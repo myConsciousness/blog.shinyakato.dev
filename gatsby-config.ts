@@ -42,6 +42,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-autolink-headers`,
           "gatsby-remark-code-titles",
           {
             resolve: "gatsby-remark-code-buttons",
@@ -50,19 +51,13 @@ module.exports = {
             }
           },
           {
-            resolve: "gatsby-remark-prismjs",
+            resolve: `gatsby-transformer-remark`,
             options: {
-              classPrefix: "language-",
-              inlineCodeMarker: null,
-              aliases: {},
-              showLineNumbers: true,
-              noInlineHighlight: true,
-              prompt: {
-                user: "root",
-                host: "localhost",
-                global: false,
-              },
-            }
+              plugins: [
+                `gatsby-remark-prismjs-title`,
+                `gatsby-remark-prismjs`,
+              ]
+            },
           },
           {
             resolve: `gatsby-remark-images`,
