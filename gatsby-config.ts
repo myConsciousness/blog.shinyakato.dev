@@ -9,15 +9,15 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `加藤ソフトウェア研究所`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Shinya Kato / 加藤 真也`,
+      summary: `twitter_api_v2、mastodon_api、その他多くのDart/Flutterライブラリの作者。`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `私が興味のあるプログラミング関連の技術やライブラリの使い方などを書いていくブログです。主な話題はDartとFlutterになりますが、ジャンルを問わずに書いていく方針です。`,
+    siteUrl: `https://blog.shinyakato.dev/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `realshinyakato`,
     },
   },
   plugins: [
@@ -102,7 +102,7 @@ module.exports = {
               }
             }`,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "加藤ソフトウェア研究所 RSS Feed",
           },
         ],
       },
@@ -110,10 +110,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `Gatsby`,
+        name: `加藤ソフトウェア研究所`,
+        short_name: `加藤ソフトウェア研究所`,
         start_url: `/`,
-        background_color: `#ffffff`,
+        background_color: `#0a192f`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,

@@ -1,7 +1,12 @@
 ---
 title: Hello World
-date: "2015-05-01T22:12:03.284Z"
+category: Blog
 description: "Hello World"
+tags:
+  - Markdown
+  - Blog
+date: "2015-05-01T22:12:03.284Z"
+draft: true
 ---
 
 This is my first post on my new fake blog! How exciting!
