@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 const SocialIconStyle = styled.div`
   a {
-    margin: 0px 10px 0px 0px;
+    margin: 0px 15px 0px 0px;
   }
 `
 

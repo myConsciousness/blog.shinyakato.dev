@@ -42,7 +42,7 @@ const BlogIndex = ({ data, location }) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  <small>投稿日: {post.frontmatter.posted_at}</small>
                 </header>
                 <section>
                   <p
@@ -77,14 +77,15 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark(sort: { frontmatter: { posted_at: DESC } }) {
       nodes {
-        excerpt
+        excerpt(truncate: true)
         fields {
           slug
         }
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
+          posted_at(formatString: "YYYY/MM/DD")
+          updated_at(formatString: "YYYY/MM/DD")
           title
           description
         }

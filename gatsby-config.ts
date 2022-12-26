@@ -65,8 +65,15 @@ module.exports = {
               maxWidth: 590
             },
           },
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              rel: "noopener noreferrer"
+            }
+          },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-plugin-twitter`,
         ],
       },
     },
@@ -93,7 +100,8 @@ module.exports = {
               return allMarkdownRemark.nodes.map(node => {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
-                  date: node.frontmatter.date,
+                  posted_at: node.frontmatter.posted_at,
+                  updated_at: node.frontmatter.updated_at,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   custom_elements: [{ "content:encoded": node.html }],
@@ -101,7 +109,7 @@ module.exports = {
               })
             },
             query: `{
-              allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+              allMarkdownRemark(sort: {frontmatter: {posted_at: DESC}}) {
                 nodes {
                   excerpt
                   html
@@ -110,7 +118,7 @@ module.exports = {
                   }
                   frontmatter {
                     title
-                    date
+                    posted_at
                   }
                 }
               }

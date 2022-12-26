@@ -2,10 +2,8 @@
 title: Hello World
 category: Blog
 description: "Hello World"
-tags:
-  - Markdown
-  - Blog
-date: "2015-05-01T22:12:03.284Z"
+tags: ["test", "aaa"]
+posted_at: "2015-05-01T22:12:03.284Z"
 draft: true
 ---
 
