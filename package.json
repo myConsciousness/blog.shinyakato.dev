@@ -19,7 +19,7 @@
     "gatsby-plugin-feed": "^5.3.1",
     "gatsby-plugin-image": "^3.3.2",
     "gatsby-plugin-manifest": "^5.3.1",
-    "gatsby-plugin-sharp": "^5.3.2",
+    "gatsby-plugin-sharp": "^5.8.1",
     "gatsby-plugin-twitter": "^5.3.1",
     "gatsby-remark-autolink-headers": "^6.3.1",
     "gatsby-remark-code-buttons": "^2.0.7",
